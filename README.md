@@ -4,7 +4,7 @@
 
 This repository contains indices describing exposure on the basis of smartphone movements.
 These indices are produced by
-[Victor Couture](http://faculty.haas.berkeley.edu/couture/index.html), 
+[Victor Couture](https://economics.ubc.ca/faculty-and-staff/victor-couture/),
 [Jonathan Dingel](http://www.jdingel.com),
 [Allison Green](https://github.com/awasgreen), 
 [Jessie Handbury](http://www.jessiehandbury.com/),
@@ -48,6 +48,9 @@ what share of those devices pinged in each county at least once during the previ
 The daily county-level LEX is an approximately 2000-by-2000 matrix in which each cell reports,
 among devices that pinged today in the column county,
 the share of devices that pinged in the row county at least once during the previous 14 days.
+
+Daily LEX values are available for January 20 through August 19.
+To limit computational costs, we are only publishing LEX values for Wednesdays and Saturdays after August 20, 2020.
 
 For tips on downloading and processing these data, please read the [notes for users](documentation/LEX_notes.md).
 For a full description of how we compute the LEX measures, please read the [LEX documentation PDF](documentation/LEX.pdf).
@@ -95,8 +98,9 @@ Venue-level exposure index, Device network-overlap index
 
 ## Acknowledgments
 
+These indices are based upon work supported by the National Science Foundation under Grant No. 2030056.
 Victor Couture thanks the Fisher Center for Real Estate and Urban Economics at Berkeley for generous financial support.
-Jonathan Dingel thanks the James S. Kemper Foundation Faculty Research Fund at the University of Chicago Booth School of Business.
+Jonathan Dingel thanks the James S. Kemper Foundation Faculty Research Fund and Initiative for Global Markets at the University of Chicago Booth School of Business.
 Jessie Handbury thanks the Research Sponsors Program of the Wharton Zell-Lurie Real Estate Center and the Wharton Dean's Research Fund.
 Kevin Williams thanks the Yale School of Management.
 
