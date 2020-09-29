@@ -1,3 +1,5 @@
+library(furrr)
+library(tidyverse)
 
 fxn <- function(file, from, to) {
   read.csv(file, stringsAsFactors = F) %>% 
@@ -10,9 +12,9 @@ files <- paste0("lex_data/", list.files("lex_data", pattern = "county_lex"))
 
 plan(multiprocess)
 
-data <- furrr::future_map_dfr(files, fxn, from = 6083, to = "X06037")
+data <- future_map_dfr(files, fxn, from = 6083, to = "X06037")
 
-holidays <- c("2020-05-23", "2020-06-12","2020-07-03") %>% 
+holidays <- c("2020-05-23", "2020-06-12","2020-07-03", "2020-09-5") %>% 
   lubridate::ymd()
 
 data %>% 
@@ -51,7 +53,7 @@ tahoe_df_data %>%
   ggplot(aes(x = date, y = exp_la)) +
   geom_line() +
   geom_point() +
-  geom_vline(xintercept = lubridate::ymd("2020-08-14")) +
+  geom_vline(xintercept = holidays) +
   labs(x = "Date", y = "County-level location exposure index (LEX)",
        title = "Exposure of Tahoe (El Dorado) county to SF county",
        subtitle = "Data are from: https://github.com/COVIDExposureIndices/COVIDExposureIndices",
